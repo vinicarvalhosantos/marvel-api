@@ -5,7 +5,8 @@ stages:
   - test
 
 before_script:
-  - docker-compose up -d
+  - echo $CI_PROJECT_PATH
+  - docker-compose -f $CI_PROJECT_PATH up -d
 
 after_script:
   - docker rm -f $(docker ps -q)
