@@ -5,24 +5,36 @@ import com.vinicius.santos.marvelapi.model.response.DataResponse;
 import com.vinicius.santos.marvelapi.model.response.ResponseError;
 import com.vinicius.santos.marvelapi.model.response.ResponseSuccess;
 import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 @Component
-public class MyFilter implements Filter {
+public class MyFilter extends OncePerRequestFilter {
+
     @Override
-    public void init(FilterConfig filterConfig) {
+    protected boolean shouldNotFilter(HttpServletRequest request) {
+        String path = request.getRequestURI();
+        ArrayList<String> routesToNotFilter = new ArrayList<>(Arrays.asList(
+                "/swagger-ui.html",
+                "/swagger-ui/index.html",
+                "/api-docs",
+                "/v2/api-docs"));
+        return routesToNotFilter.contains(path);
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HtmlResponseWrapper responseWrapper = new HtmlResponseWrapper((HttpServletResponse) response);
+    public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
+        HtmlResponseWrapper responseWrapper = new HtmlResponseWrapper(response);
         chain.doFilter(request, responseWrapper);
         try {
             response.setContentType("application/json");
-            int statusCode = ((HttpServletResponse) response).getStatus();
+            int statusCode = response.getStatus();
             if (statusCode >= 200 && statusCode < 400) {
                 ResponseSuccess responseSuccess = new ResponseSuccess();
                 DataResponse dataResponse = new DataResponse();
@@ -40,6 +52,7 @@ public class MyFilter implements Filter {
                 responseError.setCode(statusCode);
                 this.errorResponse(response, responseWrapper, responseError);
             }
+
         } catch (Exception ex) {
             throw new IOException("FAIL_TO_INTERCEPT_RESPONSE", ex);
         }

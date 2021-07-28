@@ -64,6 +64,7 @@ Lista de variáveis de ambiente necessárias para a execução da aplicação
 | DATABASE_PASSWORD      | Senha do usuário para acesso ao banco |  Texto   |     Não     |    marvel-api    |
 | DATABASE_HOST          | Host para acesso ao Banco             |  Texto   |     Não     |    localhost    |
 | DATABASE_PORT          | Porta para acesso ao Banco            | Numérico |     Não     |      3306       |
+| APPLICATION_PORT          | Porta de execuçao da API            | Numérico |     Não     |      5000       |
 
 
 ### Testes

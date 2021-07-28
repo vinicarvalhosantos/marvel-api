@@ -31,7 +31,7 @@ public class CharacterController {
             if (characterList != null) {
                 return ResponseEntity.status(HttpStatus.OK).body(characterList);
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldn't find that character"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldnt find any characters"));
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -49,7 +49,7 @@ public class CharacterController {
             if (character.isPresent()) {
                 return ResponseEntity.status(HttpStatus.OK).body(character);
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldn't find that character"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldnt find that character"));
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -67,7 +67,7 @@ public class CharacterController {
             if (comicList != null) {
                 return ResponseEntity.status(HttpStatus.OK).body(comicList);
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldn't find that character"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldnt find that character"));
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Gson().toJson(e.getMessage()));
@@ -85,7 +85,7 @@ public class CharacterController {
             if (eventList != null) {
                 return ResponseEntity.status(HttpStatus.OK).body(eventList);
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldn't find that character"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldnt find that character"));
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Gson().toJson(e.getMessage()));
@@ -103,7 +103,7 @@ public class CharacterController {
             if (seriesList != null) {
                 return ResponseEntity.status(HttpStatus.OK).body(seriesList);
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldn't find that character"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldnt find that character"));
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Gson().toJson(e.getMessage()));
@@ -121,7 +121,7 @@ public class CharacterController {
             if (storyEntity != null) {
                 return ResponseEntity.status(HttpStatus.OK).body(storyEntity);
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldn't find that character"));
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Gson().toJson("We couldnt find that character"));
             }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new Gson().toJson(e.getMessage()));
