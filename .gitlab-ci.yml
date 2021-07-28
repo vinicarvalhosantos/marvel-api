@@ -13,7 +13,7 @@ stages:
 
 build:
   stage: build
-  image: docker-compose:latest
+  image: docker:latest
   script:
     - docker-compose -f $CI_PROJECT_PATH up -d
     - mvn package
