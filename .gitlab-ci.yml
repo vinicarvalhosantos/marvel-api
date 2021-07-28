@@ -16,7 +16,7 @@ build:
   image: docker:latest
   script:
     - apk add --no-cache docker-compose
-    - docker-compose -f $CI_PROJECT_PATH up -d
+    - docker-compose up -d
     - mvn package
     - cat target/site/jacoco/index.html
     - docker rm -f $(docker ps -q)
