@@ -116,6 +116,7 @@
                         <exclude>**/*Entity.*</exclude>
                         <exclude>**/*Application.*</exclude>
                         <exclude>**/*Response.*</exclude>
+                        <exclude>**/*HtmlResponseWrapper.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

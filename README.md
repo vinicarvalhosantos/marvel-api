@@ -15,8 +15,6 @@ Este projeto tem a missão de re-implementar os endpoints characters da API perd
 
 Para a documentação é utilizado o [Swagger](https://swagger.io/). Ferramenta que provê interface para testes.
 
-![swagger](./docs/images/swagger.png)
-
 Por padrão a documentação está disponível no endpoint `/v2/api-docs`.
 
 ### Catálogo de erros
@@ -66,6 +64,19 @@ Lista de variáveis de ambiente necessárias para a execução da aplicação
 | DATABASE_PORT          | Porta para acesso ao Banco            | Numérico |     Não     |      3306       |
 | APPLICATION_PORT          | Porta de execuçao da API            | Numérico |     Não     |      5000       |
 
+> Nao é necessário rodar nenhum script para criação e população da base de dados, pois foi usado a biblioteca Flyway para relizar os migrates de base\
+> Os scripts sao encontrados no diretório resources/db/migratrion
+>
+> Path da API local:
+>> localhost:${APPLICATION_PORT}/
+>
+> Rotas:
+>> v1/public/characters\
+> v1/public/characters/{id}\
+> v1/public/characters/{id}/comics\
+> v1/public/characters/{id}/events\
+> v1/public/characters/{id}/series\
+> v1/public/characters/{id}/stories
 
 ### Testes
 

@@ -1,6 +1,5 @@
 package com.vinicius.santos.marvelapi.repository;
 
-import com.vinicius.santos.marvelapi.model.entity.SeriesEntity;
 import com.vinicius.santos.marvelapi.model.entity.StoryEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

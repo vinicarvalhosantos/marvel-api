@@ -1,7 +1,5 @@
 package com.vinicius.santos.marvelapi.test;
 
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vinicius.santos.marvelapi.controller.v1.CharacterController;
 import com.vinicius.santos.marvelapi.model.entity.*;
 import com.vinicius.santos.marvelapi.repository.*;
